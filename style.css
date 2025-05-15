@@ -84,4 +84,40 @@ footer {
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
+#theme-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+body.light {
+  background: #f3f3f3;
+  color: #222;
+}
+
+body.light header {
+  background: rgba(200, 200, 255, 0.3);
+  color: #111;
+}
+
+body.light section {
+  background: white;
+  color: #111;
+}
+
+body.light h2 {
+  color: #4a148c;
+}
+
+body.light a {
+  color: #1a237e;
+}
+
+body.light footer {
+  background: rgba(0, 0, 0, 0.05);
+  color: #444;
+}
 
