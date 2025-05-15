@@ -163,3 +163,34 @@ body.light footer {
 body.light #theme-toggle {
   color: #333;
 }
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact input,
+.contact textarea {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact button {
+  background: #c792ea;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact button:hover {
+  background: #b17ee7;
+}
