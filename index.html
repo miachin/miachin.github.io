@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +12,10 @@
 </head>
 <body>
   <header>
-  <h1>Miachin</h1>
-  <p>Exploring the Galaxy of Code & Creativity</p>
-  <button id="theme-toggle">🌙</button>
-</header>
-
+    <h1>Miachin</h1>
+    <p>Exploring the Galaxy of Code & Creativity</p>
+    <button id="theme-toggle">🌙</button>
+  </header>
 
   <section class="about">
     <h2>About Me</h2>
@@ -30,35 +30,34 @@
     </ul>
   </section>
 
+  <section class="gallery" data-aos="fade-up">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <a href="https://via.placeholder.com/800x600?text=Project+1" data-lightbox="gallery">
+        <img src="https://via.placeholder.com/300x200?text=Project+1" alt="Project 1">
+      </a>
+      <a href="https://via.placeholder.com/800x600?text=Project+2" data-lightbox="gallery">
+        <img src="https://via.placeholder.com/300x200?text=Project+2" alt="Project 2">
+      </a>
+    </div>
+  </section>
+
   <footer>
     <p>Connect with me on <a href="#">GitHub</a> | © 2025 Miachin</p>
   </footer>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-  <section class="gallery" data-aos="fade-up">
-  <h2>Gallery</h2>
-  <div class="gallery-grid">
-  <a href="https://via.placeholder.com/800x600?text=Project+1" data-lightbox="gallery">
-    <img src="https://via.placeholder.com/300x200?text=Project+1" alt="Project 1">
-  </a>
-  <a href="https://via.placeholder.com/800x600?text=Project+2" data-lightbox="gallery">
-    <img src="https://via.placeholder.com/300x200?text=Project+2" alt="Project 2">
-  </a>
-</div>
-</section>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
 
-  // Theme toggle
-  const toggleBtn = document.getElementById('theme-toggle');
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light');
-    toggleBtn.textContent = document.body.classList.contains('light') ? '☀️' : '🌙';
-  });
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Lightbox Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-</script>
+  <!-- Inisialisasi AOS & Theme Toggle -->
+  <script>
+    AOS.init();
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      toggleBtn.textContent = document.body.classList.contains('light') ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
