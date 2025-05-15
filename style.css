@@ -1,16 +1,20 @@
+/* Font dan warna dasar */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #1f004d, #4a148c, #0d47a1);
   color: white;
   line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Header */
 header {
   text-align: center;
   padding: 4rem 2rem;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 header h1 {
@@ -23,6 +27,18 @@ header p {
   color: #ddd;
 }
 
+/* Responsif Header untuk layar kecil */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
+
+/* Section umum */
 section {
   max-width: 800px;
   margin: 2rem auto;
@@ -30,13 +46,16 @@ section {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Judul section */
 h2 {
   color: #c792ea;
   margin-bottom: 1rem;
 }
 
+/* Link */
 a {
   color: #82aaff;
   text-decoration: none;
@@ -46,6 +65,12 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus {
+  outline: 2px dashed #82aaff;
+  outline-offset: 3px;
+}
+
+/* List di .projects */
 .projects ul {
   list-style: none;
   padding-left: 0;
@@ -55,13 +80,23 @@ a:hover {
   margin-bottom: 0.8rem;
 }
 
+/* List default reset */
+ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
   color: #ccc;
   background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* Galeri */
 .gallery {
   text-align: center;
 }
@@ -84,6 +119,8 @@ footer {
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
+
+/* Tombol Tema */
 #theme-toggle {
   background: transparent;
   border: none;
@@ -91,8 +128,10 @@ footer {
   font-size: 1.5rem;
   cursor: pointer;
   margin-top: 1rem;
+  transition: color 0.3s ease;
 }
 
+/* Tema Terang */
 body.light {
   background: #f3f3f3;
   color: #222;
@@ -121,3 +160,6 @@ body.light footer {
   color: #444;
 }
 
+body.light #theme-toggle {
+  color: #333;
+}
