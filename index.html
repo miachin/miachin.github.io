@@ -45,5 +45,16 @@
     <img src="https://via.placeholder.com/300x200?text=Project+4" alt="Project 4">
   </div>
 </section>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  // Theme toggle
+  const toggleBtn = document.getElementById('theme-toggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    toggleBtn.textContent = document.body.classList.contains('light') ? '☀️' : '🌙';
+  });
+</script>
 </body>
 </html>
