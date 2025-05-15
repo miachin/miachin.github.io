@@ -5,29 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Portfolio of Miachin - Exploring the Galaxy of Code & Creativity.">
   <title>Miachin | Home</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Miachin | Exploring the Galaxy of Code & Creativity">
+  <meta property="og:description" content="A web portfolio by Miachin. Check out my projects and gallery.">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Miachin">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
   <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
 </head>
 <body>
-  <header>
+  <header role="banner">
     <h1>Miachin</h1>
     <p>Exploring the Galaxy of Code & Creativity</p>
     <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
   </header>
 
-  <section class="about">
+  <section class="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>Hi! I'm Miachin. I love building beautiful web experiences that feel out of this world. From design to code, I'm exploring the galaxy of creativity.</p>
   </section>
 
-  <section class="projects">
+  <section class="projects" data-aos="fade-up">
     <h2>My Projects</h2>
     <ul>
       <li><a href="portfolio.html">🌌 Galaxy Portfolio</a></li>
@@ -47,14 +56,25 @@
     </div>
   </section>
 
-  <footer>
+  <section class="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <p>Have a question or want to work together? Let's connect!</p>
+    <form action="mailto:youremail@example.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer role="contentinfo">
     <p>Connect with me on <a href="https://github.com/">GitHub</a> | © 2025 Miachin</p>
   </footer>
 
   <!-- JS Libraries -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-  
+
   <!-- Custom Script -->
   <script>
     AOS.init();
