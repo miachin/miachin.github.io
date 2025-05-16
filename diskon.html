@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalkulator Diskon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .result {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Kalkulator Diskon</h2>
+    <input type="number" id="hargaAwal" placeholder="Masukkan harga awal (Rp)" />
+    <input type="number" id="persenDiskon" placeholder="Masukkan diskon (%)" />
+    <button onclick="hitungDiskon()">Hitung</button>
+    <div class="result" id="hasil"></div>
+  </div>
+
+  <script>
+    function hitungDiskon() {
+      const harga = parseFloat(document.getElementById('hargaAwal').value);
+      const diskon = parseFloat(document.getElementById('persenDiskon').value);
+
+      if (isNaN(harga) || isNaN(diskon)) {
+        document.getElementById('hasil').textContent = "Masukkan angka yang valid.";
+        return;
+      }
+
+      const potongan = (diskon / 100) * harga;
+      const total = harga - potongan;
+
+      document.getElementById('hasil').textContent =
+        `Harga setelah diskon: Rp ${total.toLocaleString('id-ID')}`;
+    }
+  </script>
+</body>
+</html>
