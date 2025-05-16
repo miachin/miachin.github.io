@@ -32,25 +32,41 @@
       font-size: 1rem;
     }
 
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
     button {
+      flex: 1;
       background: #4caf50;
       color: white;
       border: none;
       padding: 0.8rem;
-      width: 100%;
       font-size: 1rem;
       border-radius: 6px;
       cursor: pointer;
+      transition: background 0.3s;
     }
 
     button:hover {
       background: #45a049;
     }
 
+    .reset {
+      background: #f44336;
+    }
+
+    .reset:hover {
+      background: #e53935;
+    }
+
     .result {
       margin-top: 1rem;
       font-weight: bold;
       font-size: 1.2rem;
+      text-align: center;
     }
   </style>
 </head>
@@ -59,25 +75,40 @@
     <h2>Kalkulator Diskon</h2>
     <input type="number" id="hargaAwal" placeholder="Masukkan harga awal (Rp)" />
     <input type="number" id="persenDiskon" placeholder="Masukkan diskon (%)" />
-    <button onclick="hitungDiskon()">Hitung</button>
+
+    <div class="buttons">
+      <button onclick="hitungDiskon()">Hitung</button>
+      <button class="reset" onclick="resetForm()">Reset</button>
+    </div>
+
     <div class="result" id="hasil"></div>
   </div>
 
   <script>
+    function formatRupiah(angka) {
+      return angka.toLocaleString('id-ID');
+    }
+
     function hitungDiskon() {
       const harga = parseFloat(document.getElementById('hargaAwal').value);
       const diskon = parseFloat(document.getElementById('persenDiskon').value);
+      const hasilDiv = document.getElementById('hasil');
 
       if (isNaN(harga) || isNaN(diskon)) {
-        document.getElementById('hasil').textContent = "Masukkan angka yang valid.";
+        hasilDiv.textContent = "Masukkan angka yang valid.";
         return;
       }
 
       const potongan = (diskon / 100) * harga;
       const total = harga - potongan;
 
-      document.getElementById('hasil').textContent =
-        `Harga setelah diskon: Rp ${total.toLocaleString('id-ID')}`;
+      hasilDiv.textContent = `Harga setelah diskon: Rp ${formatRupiah(total)}`;
+    }
+
+    function resetForm() {
+      document.getElementById('hargaAwal').value = '';
+      document.getElementById('persenDiskon').value = '';
+      document.getElementById('hasil').textContent = '';
     }
   </script>
 </body>
